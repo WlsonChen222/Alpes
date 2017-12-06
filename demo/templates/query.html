@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+  <meta http-equiv="X-UA-Compatible" >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+ 
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap_admin/css/bootstrap.min.css" />
+  
+  	<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+    
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/datetime_widget.css" />
+
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/login.css" />
+  
+    <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+  
+    <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+
+  <script>
+    (function ($) {
+      $(document).ready(function(){
+        $("#overlay").delay(600).fadeOut(500);
+      });
+    })(django.jQuery);
+  </script>
+  <script type="text/javascript">window.__admin_media_prefix__ = "/static/admin/";</script>
+  <script type="text/javascript">window.__admin_utc_offset__ = "0";</script>
+
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class=" login no-sidebar" data-admin-utc-offset="0">
+
+  <div id="overlay">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- <div class="col-sm-3 col-md-2 sidebar"> -->
+      
+        
+      
+
+      
+  <div id="content-main">
+    <div class="login-container">
+      
+      <form action="/search" method="post" id="login-form" class="form form-horizontal" role="form"><input type='hidden' name='csrfmiddlewaretoken' value='4ETozhirNAWWHqnpY00QWIjXuvpByJreLh9gDn1wF0JdsLbZhgSNYsnUAbVIDCUY' />
+        <a href="/admin/">
+        
+          <img alt="Django administration" src="http://www.www8-hp.com/us/en/images/i/hpi/header-footer/caas-hf-v3.2/hpi-hp-logo-pr.gif" class="logo-admin">
+        </a>
+        <fieldset>
+          <legend>
+            {{ title }}
+          </legend>
+
+          
+
+          <div class="row form-row" colspan=5 nowrap>
+          
+          
+            <div class="col-sm-6 program">
+              <div class="input-group ">
+                <span class="input-group-addon">
+                  <span>Program: </span>
+                </span>
+                <select name="program" autofocus class="required form-control" required id="id_program" >
+                	<option id=1>Aorura</option>
+                	<option id=2>Zenith</option>
+                	<option id=3>Nile</option>
+                	<option id=4>Pyramid</option>
+                </select>
+                
+                <span class="input-group-addon toggle-password">
+                  <span>Bundle:</span>
+                </span>
+                
+                <select name="bundle" autofocus class="required form-control" required id="id_bundle" >
+                	<option id=1>DN</option>
+                	<option id=2>DW</option>
+                </select>      
+                
+              </div><!-- /input-group -->
+            </div><!-- /.col-sm-6 -->       
+         
+            <div class="col-sm-6 bundle">
+              <div class="input-group ">
+
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-eye-open"></span>
+                </span>
+                <select name="firmware" autofocus class="required form-control" required id="id_firmware" >
+                	<option id=1>Rom01</option>
+                	<option id=2>Rom02</option>
+                	<option id=3>Rom03</option>
+                	<option id=4>Rom04</option>
+                </select>    
+                
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-eye-open"></span>
+                </span>
+                <select name="software" autofocus class="required form-control" required id="id_software" >
+                	<option id=1>46.1.001</option>
+                	<option id=2>46.1.002</option>
+                	<option id=3>46.1.003</option>
+                	<option id=4>46.1.004</option>
+                </select>
+                
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-primary">Query</button>
+                </span>
+
+              </div><!-- /input-group -->
+            </div><!-- /.col-sm-6 -->
+          </div>
+
+          <input type="hidden" name="next" value="/admin/" />
+
+          
+          
+        </fieldset>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      document.getElementById('id_program').focus();
+      (function ($) {
+        $(document).ready(function(){
+          $('.toggle-password').on('click', function() {
+            $span = $(this).find('span');
+            if ($span.hasClass('glyphicon-eye-open')) {
+              $span.removeClass('glyphicon-eye-open').addClass('glyphicon-eye-close');
+              $('#id_password').prop('type', 'text');
+            } else {
+              $span.removeClass('glyphicon-eye-close').addClass('glyphicon-eye-open');
+              $('#id_password').prop('type', 'password');
+            }
+          });
+        });
+      })(django.jQuery);
+    </script>
+  </div>
+
+    </div>
+  </div>
+
+
+  <script src="/static/bootstrap_admin/js/bootstrap.min.js"></script>
+  <script src="/static/bootstrap_admin/js/base.js"></script>
+
+
+
+</body>
+</html>

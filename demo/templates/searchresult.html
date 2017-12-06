@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+  <meta http-equiv="X-UA-Compatible" >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+ 
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap_admin/css/bootstrap.min.css" />
+  
+  	<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+    
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/datetime_widget.css" />
+
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/login.css" />
+  
+    <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+  
+    <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+
+  <script>
+    (function ($) {
+      $(document).ready(function(){
+        $("#overlay").delay(600).fadeOut(500);
+      });
+    })(django.jQuery);
+  </script>
+  <script type="text/javascript">window.__admin_media_prefix__ = "/static/admin/";</script>
+  <script type="text/javascript">window.__admin_utc_offset__ = "0";</script>
+
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class=" login no-sidebar" data-admin-utc-offset="0">
+
+  <div id="overlay">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- <div class="col-sm-3 col-md-2 sidebar"> -->
+      
+        
+      
+
+       <a href="/admin/">       
+          <img alt="System performance" src="http://www.www8-hp.com/us/en/images/i/hpi/header-footer/caas-hf-v3.2/hpi-hp-logo-pr.gif" class="logo-admin">
+        </a>
+        
+  <div id="content-main">
+    <div class="table-responsive table-apps">
+        <table class="table table-bordered" width=100%>
+         <!--  <thead>
+            <tr>
+              <th class="title-head-apps">
+                Apps
+              </th>
+
+              <th class="title-head-actions">Action</th>
+            </tr>
+          </thead> -->
+          <tbody class="list">
+            
+              {% for report in reports %}
+              
+                 <tr class="app-auth bg-colored">
+                
+                    <td class="app-name last-app">
+                        <a class="section" title="{{ report.name }}">{{ report.name }}</a>
+                    </td>
+                
+
+	                <td class="model-name model-group">                  
+	                    <a class="extra-app-name" title="{{ report.id }}" target="_new" href="/download?report_id={{ report.id }}">Download...</a>          
+	                </td>
+	              
+	              </tr>
+              {% endfor %}
+              
+                 	                        
+          </tbody>
+        </table>
+      </div>
+  </div><!-- content-main -->
+
+    </div>
+  </div>
+
+
+  <script src="/static/bootstrap_admin/js/bootstrap.min.js"></script>
+  <script src="/static/bootstrap_admin/js/base.js"></script>
+
+
+
+</body>
+</html>
